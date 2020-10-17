@@ -1,0 +1,62 @@
+Problem 
+
+Write a program in Java Script that will take shocks array as input and returns number of pairs for every unique color. 
+
+
+
+
+function takeInput()
+{
+	var noOfSocks=prompt("enter the number of sockes in pile")
+	if(noOfSocks==0|| noOfSocks==undefined|| noOfSocks==null || noOfSocks=="")
+		{
+		alert("kindly enter the correct number of Socks");
+		
+		}
+	else
+		{
+		var arrayOfSocks=prompt("enter the color of socks in pile with space seprated")
+		if( arrayOfSocks==undefined|| arrayOfSocks==null||arrayOfSocks=="")
+		{
+		alert("kindly enter the color of scokes");
+		
+		}
+		else
+			{
+			var arr=arrayOfSocks.splits(" ");
+			if(arr.length>0)
+				{
+				if(noOfSocks==arr.length)
+					{
+					findNoOfPairedSocks(noOfScoks,arr)
+					}
+				else
+					{
+					alert("entered number of scokes are not equal to enter the pile");
+					}
+				}
+			}
+		}
+	}
+function findNoOfPairedSocks(num,arr) 
+{
+var pair=0;
+var arrayLength=arr.length;
+if(arrayLength==num)
+	{
+	var newSortedArray=arr.sort(function (a,b)
+			{
+		return a-b;
+		
+	});
+	console.log(newSortedArray);
+	for(var index=0;index<num-1;index++)
+		if(newSortedArray[index]==newSortedArray[index+1] )
+			{
+			pairs++;
+			index=index+1;
+			}
+	}
+	
+	return pairs;
+}
